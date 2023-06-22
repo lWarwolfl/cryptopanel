@@ -1,0 +1,146 @@
+//Imported styles
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Header styles desktop
+$height: 40px;
+
+.header {
+	@include flex-row;
+	justify-content: space-between;
+	width: 100%;
+
+	.addressbox {
+		@include flex-row;
+		width: 260px;
+		height: $height;
+
+		.address {
+			@include flex-row;
+
+			align-items: center;
+			padding: 11px 15px;
+			font-size: $font-size-m;
+			font-weight: $font-weight-medium;
+			color: var(--primary-color-dark);
+			margin-right: 8px;
+			background-color: var(--contrast-color);
+			height: $height;
+			width: 100%;
+			border-radius: calc($height / 2);
+
+			.text {
+				@include overflow-ellipsis;
+				width: 100%;
+			}
+		}
+
+		.iconbutton {
+			color: var(--primary-color-dark);
+			background-color: var(--contrast-color);
+			height: $height;
+			width: $height;
+			border-radius: calc($height / 2);
+			transition: $transition-m;
+
+			.icon {
+				font-size: $font-size-l;
+			}
+		}
+
+		.iconbutton:hover {
+			box-shadow: 0 0 15px var(--primary-color-transparent);
+		}
+	}
+
+	.databox {
+		$margin: 25px;
+		@include flex-row;
+		height: $height;
+
+		.buttoncontainer {
+			position: relative;
+			margin-left: $margin;
+
+			.iconbutton {
+				position: absolute;
+				top: 0;
+				right: -20px;
+				color: var(--card-color);
+				background-color: var(--primary-color);
+				height: $height;
+				width: $height;
+				border-radius: calc($height / 2);
+				transition: $transition-m;
+			}
+
+			.button {
+				width: 72px;
+				color: var(--font-color-primary);
+				background-color: var(--card-color);
+				height: $height;
+				border-radius: calc($height / 2);
+				transition: $transition-m;
+				padding-right: 35px;
+				padding-left: 25px;
+				text-transform: unset;
+				border: 1px solid var(--outline-color);
+
+				.icon {
+					font-size: $font-size-l;
+				}
+			}
+
+			.button:hover {
+				box-shadow: 0 0 15px var(--primary-color-transparent);
+			}
+		}
+
+		.usercontainer {
+			@include flex-row;
+			align-items: center;
+			margin-left: $margin;
+			width: 120px;
+
+			.image {
+				@include background-contain;
+
+				height: $height;
+				width: $height;
+				border-radius: calc($height / 2);
+				filter: hue-rotate(260deg)
+			}
+
+			.name {
+				@include overflow-ellipsis;
+
+				font-size: $font-size-m;
+				font-weight: $font-weight-medium;
+				color: var(--font-color-primary);
+				margin-right: 8px;
+				width: 100%;
+			}
+		}
+
+		.iconbutton {
+			color: var(--primary-color-dark);
+			background-color: var(--contrast-color);
+			height: $height;
+			width: $height;
+			border-radius: calc($height / 2);
+			transition: $transition-m;
+
+			.icon {
+				font-size: $font-size-l;
+			}
+		}
+
+		.iconbutton:hover {
+			box-shadow: 0 0 15px var(--primary-color-transparent);
+		}
+	}
+}
+
+@media screen and (max-width: 1050px) {
+}
