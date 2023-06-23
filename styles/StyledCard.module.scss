@@ -1,0 +1,47 @@
+//Imported styles
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Styled Card styles desktop
+.container {
+	position: relative;
+	width: calc((100% / 3) - 20px);
+	margin-bottom: 30px;
+	padding: 10px;
+	height: 150px;
+	background-color: var(--card-color);
+	border-radius: 15px;
+	overflow: hidden;
+	transition: transform $transition-f cubic-bezier(0.16, 1, 0.3, 1);
+
+	.glow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		$size: 200px;
+		width: $size;
+		height: $size;
+		filter: blur(120px);
+		border-radius: calc($size / 2);
+		opacity: 0;
+		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
+		will-change: transform;
+		background-color: var(--primary-color-darker);
+		opacity: 0;
+		z-index: -2;
+	}
+}
+
+.container:hover {
+	.glow {
+		opacity: 0.55;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.container:hover {
+		.glow {
+			opacity: 0;
+		}
+	}
+}

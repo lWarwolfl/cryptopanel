@@ -1,0 +1,15 @@
+//Imported styles
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Header styles desktop
+$height: 40px;
+
+.card {
+	@include flex-column;
+	min-width: 250px;
+}
+
+@media screen and (max-width: 1050px) {
+}

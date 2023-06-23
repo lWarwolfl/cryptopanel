@@ -12,8 +12,7 @@ $height: 40px;
 	padding-right: 30px;
 
 	.logo {
-		margin: 10px 0 0;
-		font-size: $font-size-l;
+		font-size: $font-size-xl;
 		font-weight: $font-weight-boldwide;
 		color: var(--font-color-primary);
 		text-transform: uppercase;
@@ -22,45 +21,82 @@ $height: 40px;
 
 	.seperator {
 		height: 0;
-		margin: 20px 0;
+		margin: 25px 0 0;
 		width: 100%;
-		border-bottom: 3px solid var(--highlight-color);
+		border-bottom: 3.5px solid var(--highlight-color);
 	}
 
 	.title {
 		margin-top: 25px;
-		margin-bottom: 10px;
-		font-size: $font-size-es;
+		margin-bottom: 20px;
+		font-size: $font-size-vs;
 		font-weight: $font-weight-medium;
 		color: var(--font-color-secondary);
 		text-transform: uppercase;
 		width: 100%;
 	}
 
+	.linkcontainer.nobottom {
+		margin-bottom: 0;
+	}
+
 	.linkcontainer {
 		@include flex-row;
-		width: 100%;
-		margin-bottom: 15px;
-		position: relative;
+		align-items: center;
 
-		.icon {
-			position: absolute;
-			top: calc(50% - calc($font-size-em / 2));
-			left: 0;
-			font-size: $font-size-em;
-			color: var(--font-color-primary);
+		cursor: pointer;
+		transition: $transition-f;
+		width: calc(100% - 5px);
+		margin-left: 5px;
+		margin-bottom: 20px;
+		position: relative;
+		color: var(--font-color-primary);
+
+		.new {
+			width: 5px;
+			height: 5px;
+			border-radius: 100%;
+			background-color: var(--primary-color);
+			margin-left: auto;
 		}
 
-		.button {
+		.icon {
+			font-size: $font-size-l;
+			margin-right: 12px;
+		}
+
+		.link {
 			width: 100%;
-			justify-content: flex-start;
-			align-items: center;
 			font-size: $font-size-r;
-			font-weight: $font-weight-regular;
-			color: var(--font-color-primary);
-			padding-left: 35px;
-			padding-right: 15px;
-			text-transform: unset;
+			font-weight: $font-weight-light;
+		}
+	}
+
+	.linkcontainer:hover, .linkcontainer.active {
+		color: var(--primary-color-dark);
+	}
+
+	.socialcontainer {
+		@include flex-row;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 25px;
+		max-width: 160px;
+
+		.iconbutton {
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+
+			.icon {
+				font-size: $font-size-xxl;
+				color: var(--primary-color);
+				transition: $transition-f;
+			}
+
+			.icon:hover {
+				color: var(--primary-color-dark);
+			}
 		}
 	}
 
@@ -80,7 +116,7 @@ $height: 40px;
 			margin-right: 8px;
 			background-color: var(--contrast-color);
 			height: $height;
-			width: 100%;
+			width: calc(100% - (20px + $height));
 			border-radius: calc($height / 2);
 
 			.text {

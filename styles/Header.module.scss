@@ -13,7 +13,7 @@ $height: 40px;
 
 	.addressbox {
 		@include flex-row;
-		width: 260px;
+		width: 300px;
 		height: $height;
 
 		.address {
@@ -27,7 +27,7 @@ $height: 40px;
 			margin-right: 8px;
 			background-color: var(--contrast-color);
 			height: $height;
-			width: 100%;
+			width: calc(100% - (20px + $height));
 			border-radius: calc($height / 2);
 
 			.text {
@@ -62,6 +62,7 @@ $height: 40px;
 		.buttoncontainer {
 			position: relative;
 			margin-left: $margin;
+			margin-right: calc($height / 2);
 
 			.iconbutton {
 				position: absolute;
