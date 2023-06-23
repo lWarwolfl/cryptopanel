@@ -8,16 +8,36 @@ import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import { IconButton, Button } from "@mui/material";
 
-export default function Home() {
+export default function Home(): JSX.Element {
+	const sidebarRef = React.useRef<HTMLDivElement>(null);
 	const [isOpen, setIsOpen] = React.useState(false);
 
-	const handleMenuClick = () => {
+	const handleMenuClick = (): void => {
 		setIsOpen(true);
 	};
 
-	const handleIconButtonClick = () => {
+	const handleIconButtonClick = (): void => {
 		setIsOpen(false);
 	};
+
+	const handleOutsideClick = (event: MouseEvent | TouchEvent): void => {
+		if (
+			sidebarRef.current &&
+			!sidebarRef.current.contains(event.target as Node)
+		) {
+			setIsOpen(false);
+		}
+	};
+
+	React.useEffect(() => {
+		document.addEventListener("click", handleOutsideClick);
+		document.addEventListener("touchstart", handleOutsideClick);
+
+		return () => {
+			document.removeEventListener("click", handleOutsideClick);
+			document.removeEventListener("touchstart", handleOutsideClick);
+		};
+	}, []);
 
 	return (
 		<>
@@ -26,7 +46,7 @@ export default function Home() {
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
 			<main className="main">
-				<div className={`sidebar ${isOpen ? "open" : ""}`}>
+				<div className={`sidebar ${isOpen ? "open" : ""}`} ref={sidebarRef}>
 					<SideBar />
 					<Button
 						className={`menu-button ${isOpen ? "hidden" : ""}`}
