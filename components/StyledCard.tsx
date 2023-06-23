@@ -18,7 +18,7 @@ export default function StyledCard({ id, className, children }: Props) {
 			const mouseY = event.clientY - containerRect.top;
 
 			let multiplier = 6;
-			let offset = 100;
+			let offset = 50;
 
 			const xSkew =
 				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) *

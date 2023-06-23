@@ -14,13 +14,14 @@
 	@include flex-row;
 	@include width-fix;
 	padding: 30px;
+	position: relative;
 
 	.sidebar {
 		width: 260px;
 	}
 
 	.panel {
-		flex: 5;
+		width: calc(100% - 260px);
 
 		.analytics {
 			@include flex-row;
@@ -61,13 +62,22 @@ a {
 	text-decoration: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
 	html body {
 		font-size: $font-size-g-mobile;
 	}
 
 	.main {
 		padding: 20px;
+
+		.panel {
+			width: 100%;
+		}
+
+		.sidebar {
+			display: none;
+			position: fixed;
+		}
 	}
 }
 

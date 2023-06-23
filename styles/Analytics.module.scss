@@ -6,10 +6,200 @@
 //Header styles desktop
 $height: 40px;
 
+.addressbox {
+	display: none;
+	width: 100%;
+	height: $height;
+	margin-bottom: 30px;
+
+	.address {
+		@include flex-row;
+
+		align-items: center;
+		padding: 11px 15px;
+		font-size: $font-size-m;
+		font-weight: $font-weight-medium;
+		color: var(--primary-color-dark);
+		margin-right: 8px;
+		background-color: var(--contrast-color);
+		height: $height;
+		width: calc(100% - (20px + $height));
+		border-radius: calc($height / 2);
+
+		.text {
+			@include overflow-ellipsis;
+			width: 100%;
+		}
+	}
+
+	.iconbutton {
+		color: var(--primary-color-dark);
+		background-color: var(--contrast-color);
+		height: $height;
+		width: $height;
+		border-radius: calc($height / 2);
+		transition: $transition-m;
+
+		.icon {
+			font-size: $font-size-l;
+		}
+	}
+
+	.iconbutton:hover {
+		box-shadow: 0 0 15px var(--primary-color-transparent);
+	}
+}
+
 .card {
 	@include flex-column;
 	min-width: 250px;
+
+	.title {
+		@include flex-row;
+
+		align-items: center;
+		margin-bottom: 17px;
+		font-size: $font-size-es;
+		font-weight: $font-weight-medium;
+		color: var(--font-color-secondary);
+		text-transform: uppercase;
+		width: 100%;
+
+		.icon {
+			font-size: $font-size-m;
+			color: var(--font-color-secondary);
+			margin-left: auto;
+		}
+	}
+
+	.exchange {
+		@include flex-row;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 17px;
+
+		.from {
+			font-size: $font-size-em;
+			font-weight: $font-weight-semibold;
+			color: var(--font-color-primary);
+			text-transform: uppercase;
+			caret-color: var(--primary-color-dark);
+
+			.secondary {
+				color: var(--outline-color);
+			}
+
+			.regular {
+				font-weight: $font-weight-medium;
+				font-size: $font-size-m;
+			}
+		}
+
+		.icon {
+			font-size: $font-size-xxxl;
+			color: var(--primary-color);
+		}
+
+		.to {
+			font-size: $font-size-em;
+			font-weight: $font-weight-semibold;
+			color: var(--font-color-primary);
+			text-transform: uppercase;
+
+			.secondary {
+				color: var(--outline-color);
+			}
+
+			.regular {
+				font-weight: $font-weight-medium;
+				font-size: $font-size-m;
+			}
+		}
+	}
+
+	.footer {
+		@include flex-row;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+
+		.text {
+			@include flex-row;
+
+			font-size: $font-size-es;
+			color: var(--outline-color);
+			font-weight: $font-weight-medium;
+
+			.accent {
+				color: var(--primary-color-dark);
+			}
+		}
+	}
+
+	.chart2 {
+		@include background-contain;
+
+		height: 100%;
+		width: 100%;
+		background-image: url("../public/image/png/chart2.png");
+	}
 }
 
-@media screen and (max-width: 1050px) {
+.troncard {
+	@include flex-row;
+	min-width: 250px;
+
+	.data {
+		@include flex-column;
+
+		justify-content: space-between;
+		width: 55px;
+		height: 100%;
+		margin-right: 10px;
+
+		.image {
+			@include background-cover;
+
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+		}
+
+		.coin {
+			font-size: $font-size-r;
+			font-weight: $font-weight-semibold;
+			color: var(--font-color-primary);
+			text-transform: uppercase;
+			margin-bottom: 5px;
+
+			.abr {
+				font-size: $font-size-s;
+				font-weight: $font-weight-medium;
+				color: var(--font-color-secondary);
+				text-transform: uppercase;
+			}
+		}
+
+		.accent {
+			font-size: $font-size-es;
+			font-weight: $font-weight-regular;
+			color: var(--primary-color);
+			text-transform: uppercase;
+		}
+	}
+
+	.chart1 {
+		@include background-contain;
+
+		height: 100%;
+		width: calc(100% - 65px);
+		background-image: url("../public/image/png/chart1.png");
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.addressbox {
+		display: flex;
+	}
 }

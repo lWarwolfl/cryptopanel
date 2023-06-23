@@ -8,8 +8,22 @@ $height: 40px;
 
 .header {
 	@include flex-row;
-	justify-content: space-between;
 	width: 100%;
+
+	.logo {
+		@include background-contain;
+
+		cursor: pointer;
+		height: $height;
+		width: $height;
+		border-radius: calc($height / 2);
+		transition: $transition-f;
+		margin-right: 20px;
+	}
+
+	.logo:hover {
+		box-shadow: 0 0 15px var(--primary-color-transparent);
+	}
 
 	.addressbox {
 		@include flex-row;
@@ -57,6 +71,7 @@ $height: 40px;
 	.databox {
 		$margin: 25px;
 		@include flex-row;
+		margin-left: auto;
 		height: $height;
 
 		.buttoncontainer {
@@ -110,7 +125,7 @@ $height: 40px;
 				height: $height;
 				width: $height;
 				border-radius: calc($height / 2);
-				filter: hue-rotate(260deg)
+				filter: hue-rotate(260deg);
 			}
 
 			.name {
@@ -143,5 +158,10 @@ $height: 40px;
 	}
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 900px) {
+	.header {
+		.addressbox {
+		display: none;
+	}
+	}
 }

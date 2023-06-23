@@ -8,11 +8,11 @@ $height: 40px;
 
 .container {
 	@include flex-column;
-	padding: 30px;
+	padding: 10px 20px;
 	border-radius: 15px;
 	background-color: var(--card-color);
 	width: 100%;
-	min-height: calc(100vh - 310px);
+	min-height: calc(100vh - 280px);
 }
 
 @media screen and (max-width: 1050px) {

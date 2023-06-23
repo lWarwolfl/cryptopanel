@@ -9,7 +9,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Sample Panel - Welcome</title>
+				<title>Crypto Panel - $</title>
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
 			<main className="main">

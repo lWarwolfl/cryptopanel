@@ -6,6 +6,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import photo from "../public/image/svg/photo.svg";
+import logo from "../public/image/png/logo.png";
 
 export default function Header() {
 	const [copied, setCopied] = useState(false);
@@ -22,6 +23,7 @@ export default function Header() {
 	return (
 		<>
 			<div className={styles.header}>
+				<Image src={logo} priority={true} alt="Logo" className={styles.logo} />
 				<div className={styles.addressbox}>
 					<div className={styles.address}>
 						<span className={styles.text}>

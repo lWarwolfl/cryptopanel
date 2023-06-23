@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/SideBar.module.scss";
-import { Button, IconButton } from "@mui/material";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import { IconButton } from "@mui/material";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
@@ -17,21 +16,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 
 export default function SideBar() {
-	const [copied, setCopied] = useState(false);
-	const walletAddress = "0xAbCdEfGh1234567890iJkLmNoPqRsTuVwXyZ";
-
-	const handleCopyAddress = () => {
-		navigator.clipboard.writeText(walletAddress);
-		setCopied(true);
-		setTimeout(() => {
-			setCopied(false);
-		}, 2000);
-	};
-
 	return (
 		<>
 			<div className={styles.sidebar}>
-				<div className={styles.logo}>sample-panel-$</div>
+				<div className={styles.logo}>crypto-panel-$</div>
 
 				<div className={styles.seperator}></div>
 
@@ -92,17 +80,6 @@ export default function SideBar() {
 					</IconButton>
 					<IconButton className={styles.iconbutton}>
 						<TelegramIcon className={styles.icon} />
-					</IconButton>
-				</div>
-
-				<div className={styles.addressbox}>
-					<div className={styles.address}>
-						<span className={styles.text}>
-							{copied ? "Copied to clipboard" : walletAddress}
-						</span>
-					</div>
-					<IconButton className={styles.iconbutton} onClick={handleCopyAddress}>
-						<ContentCopyIcon className={styles.icon} />
 					</IconButton>
 				</div>
 			</div>

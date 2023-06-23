@@ -1,0 +1,74 @@
+@import "./globals.scss";
+@import "./mixins.scss";
+
+.MuiDataGrid-columnHeaderTitleContainer {
+	color: var(--font-color-secondary);
+}
+
+.MuiDataGrid-withBorderColor {
+	border: none;
+	color: var(--font-color-primary) !important;
+	border-color: var(--contrast-color) !important;
+}
+
+.MuiDataGrid-row:last-child {
+	.MuiDataGrid-withBorderColor {
+		border: none;
+	}
+}
+
+.MuiDataGrid-iconButtonContainer {
+	.MuiIconButton-root {
+		color: var(--font-color-secondary);
+	}
+}
+
+.MuiDataGrid-columnSeparator {
+	opacity: 0.9 !important;
+}
+
+.MuiDataGrid-footerContainer {
+    display: none;
+}
+
+.grid-cell-new {
+    @include flex-row;
+    align-items: center;
+
+    .image {
+        @include background-cover;
+
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+
+	.text {
+        position: relative;
+		font-size: $font-size-es;
+		font-weight: $font-weight-medium;
+		color: var(--font-color-primary);
+		text-transform: uppercase;
+
+		.secondary {
+			color: var(--font-color-secondary);
+		}
+
+        .secondary-small {
+            position: absolute;
+            width: 100%;
+			color: var(--font-color-secondary);
+            font-size: $font-size-vs;
+            bottom: calc(-7px - $font-size-vs);
+            left: 0;
+		}
+
+        .accent {
+            color: var(--primary-color);
+        }
+	}
+}
+
+.grid-container {
+    overflow-x: auto;
+}

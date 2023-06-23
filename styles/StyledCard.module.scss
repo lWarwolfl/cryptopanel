@@ -7,8 +7,8 @@
 	position: relative;
 	width: calc((100% / 3) - 20px);
 	margin-bottom: 30px;
-	padding: 10px;
-	height: 150px;
+	padding: 15px;
+	height: 120px;
 	background-color: var(--card-color);
 	border-radius: 15px;
 	overflow: hidden;
@@ -18,7 +18,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		$size: 200px;
+		$size: 100px;
 		width: $size;
 		height: $size;
 		filter: blur(120px);
@@ -26,7 +26,7 @@
 		opacity: 0;
 		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
 		will-change: transform;
-		background-color: var(--primary-color-darker);
+		background-color: var(--primary-color);
 		opacity: 0;
 		z-index: -2;
 	}
@@ -34,7 +34,19 @@
 
 .container:hover {
 	.glow {
-		opacity: 0.55;
+		opacity: 0.75;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 48%;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.container {
+		width: 100%;
 	}
 }
 
