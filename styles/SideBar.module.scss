@@ -104,7 +104,7 @@ $height: 40px;
 
 @media screen and (max-width: 900px) {
 	.sidebar {
-		height: calc(100vh - 110px);
+		height: calc(100dvh - 70px);
 		overflow-y: auto;
 		padding-right: 10px;
 
